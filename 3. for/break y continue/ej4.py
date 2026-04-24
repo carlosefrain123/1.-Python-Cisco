@@ -18,3 +18,10 @@ utiliza la ejecución condicional y la instrucción continue para "devorar" las 
 ingresada.
 imprime las letras no consumidas en la pantalla, cada una de ellas en una línea separada
 Prueba tu programa con los datos que le proporcionamos. """
+
+valor=input("Escriba una palabra: ")
+palabras=valor.upper()
+for i in palabras:
+    if i in "AEIOU":
+        continue
+    print("El valor es: "+str(i))
