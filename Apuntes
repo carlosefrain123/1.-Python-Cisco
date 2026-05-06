@@ -1,0 +1,80 @@
+1. Listas
+1.1. delete:
+Ejemplo:
+del valor[1]
+
+1.2. append:
+Ejemplo:
+valor.append(1)
+
+1.3. insert:
+Ejemplo:
+valor.insert(1,0)
+
+2. Burbuja
+2.1. sort: Ordenar la lista oarrays
+valor.sort()
+Ejemplo:
+lista=[5,2,1]
+lista.sort()
+
+    ->1,2,5
+2.2. reverse
+valor.reverse()
+Ejemplo:
+lista=[5,2,1]
+lista.reverse()
+
+    ->1,2,5
+
+3.Tuplas y Diccionarios:
+3.1. Tuplas:
+Ejemplo:
+Tupla=(1,2,3,4)
+
+3.2. Diccionarios:
+Ejemplo:
+diccionario={"gato":10,"perro":20,"cuy":30}
+
+3.2.1. Diccionarios - Key:
+diccionario_Key={"gato":10,"perro":20,"cuy":30}
+for i in dictionary_Key.keys():
+    print(i,"->",dictionary_Key[i])
+
+    ->gato:10
+    ->perro->20
+    ->cuy->30
+
+3.2.2. Diccionarios - items:
+diccionario_items={"gato":10,"perro":20,"cuy":30}
+for a,b in dictionary_items.items():
+    print(a,"->",b)
+
+    ->gato->10
+    ->perro->20
+    ->cuy->30
+
+3.2.3. Diccionario - sorted
+diccionario_sorted={"gato":10,"perro":20,"cuy":30}
+for i in sorted(dictionary_Key.keys()):
+    print(i,"->",dictionary_Key[i])
+
+    ->cuy->30
+    ->gato->10
+    ->perro->20
+
+3.2.4. Diccionario - update
+diccionario={"gato":10,"perro":20,"cuy":30}
+diccionario.update("caballo":20)
+
+    ->{"gato":10,"perro":20,"cuy":30,"caballo":20}
+
+4. Excepciones:
+4.1. ZeroDivisionError:
+    10/0
+4.2. ValuesError:
+    int("Hola")
+4.3. TypeError:
+    10+"5"
+4.4. AtributeError:
+    "10".append
