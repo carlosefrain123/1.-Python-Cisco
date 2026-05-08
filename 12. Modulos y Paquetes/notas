@@ -1,0 +1,66 @@
+""" Módulo vs Paquete — Explicación desde cero
+Primero olvidate de Python por un momento.
+
+Imagínate una biblioteca 📚
+Una biblioteca tiene libros organizados en estantes por tema.
+
+📚 Biblioteca
+    🗄️ Estante de Matemáticas
+        📖 Libro de Álgebra
+        📖 Libro de Geometría
+        📖 Libro de Estadística
+
+    🗄️ Estante de Ciencias
+        📖 Libro de Física
+        📖 Libro de Química
+
+Ahora traduce eso a Python:
+📖 Libro      →    Módulo  (un archivo .py)
+🗄️ Estante    →    Paquete (una carpeta)
+
+Módulo — El libro
+Un módulo es un archivo .py que alguien ya escribió con funciones listas para usar.
+
+# En vez de calcular tú mismo la raíz cuadrada...
+resultado = 25 ** 0.5    # lo haces a mano
+
+# ...usas el módulo math que ya lo tiene hecho
+import math
+resultado = math.sqrt(25)  # alguien más ya lo escribió por ti
+
+
+
+Paquete — El estante
+Un paquete es una carpeta que agrupa módulos del mismo tema.
+Ejemplo real — cuando instalas numpy:
+
+📁 numpy/                ← la carpeta (paquete)
+    📄 random.py         ← archivo (módulo)
+    📄 math.py           ← archivo (módulo)
+    📄 statistics.py     ← archivo (módulo)
+    
+Para usarlo entras a la carpeta y sacas el módulo que necesitas:
+pythonimport numpy.random      # entras a la carpeta numpy, abres random.py
+import numpy.math        # entras a la carpeta numpy, abres math.py
+
+¿Cuándo te importa esto a ti ahora?
+Caso 1 — Usas un módulo solo
+Cuando el tema es pequeño y cabe en un archivo:
+pythonimport math       # un archivo, funciones matemáticas básicas
+import random     # un archivo, funciones aleatorias
+import platform   # un archivo, info del sistema
+Caso 2 — Usas un paquete
+Cuando el tema es grande y necesita varios archivos organizados:
+pythonimport numpy      # carpeta entera con decenas de archivos
+import pandas     # carpeta entera para manejar datos
+
+La diferencia visual
+# MÓDULO → un solo archivo
+math.py  →  import math
+
+# PAQUETE → una carpeta con archivos adentro
+📁 numpy/
+    📄 random.py
+    📄 math.py     →   import numpy
+    📄 core.py
+ """

@@ -1,0 +1,6 @@
+📁 1/
+    📁 calculadora/
+        📄 __init__.py    ← vacío, obligatorio
+        📄 avanzada.py
+        📄 basica.py
+    📄 main.py
