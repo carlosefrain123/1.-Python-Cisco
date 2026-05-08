@@ -1,0 +1,50 @@
+""" 
+PIP — Gestor de paquetes de Python
+I. ¿Qué es?
+PIP es como una tienda de módulos — en vez de escribir código desde cero, descargas lo que alguien más ya hizo.
+
+¿Para qué sirve?
+math, random y platform vienen incluidos en Python, no necesitas instalar nada. Pero hay miles de módulos que 
+no vienen incluidos y ahí entra PIP:
+
+# Sin PIP tendrías que programar todo esto tú mismo 😰
+# Con PIP lo descargas en segundos 😎
+
+pip install numpy        # matemáticas avanzadas
+pip install pandas       # manejar datos y tablas
+pip install requests     # conectarte a internet/APIs
+pip install flask        # crear páginas web
+pip install pygame       # crear videojuegos
+pip install matplotlib   # crear gráficas
+
+II. Comandos básicos que vas a usar
+
+# Instalar un paquete
+pip install nombre
+
+# Desinstalar
+pip uninstall nombre
+
+# Referenciar los comandos pip
+pip help
+
+# Ver todos los paquetes instalados
+pip list
+
+# Ver info de un paquete específico
+pip show numpy
+
+# Actualizar un paquete
+pip install --upgrade nombre
+
+II. Comando GIT:
+# Verificar que tienes PIP instalado
+pip --version
+
+# Instalar algo
+pip install requests
+
+# Usarlo en tu código
+import requests          # ya puedes usarlo
+
+ """
