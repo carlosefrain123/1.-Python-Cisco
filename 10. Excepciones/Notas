@@ -1,0 +1,22 @@
+El orden va de más específico a más general. Piénsalo como un embudo:
+
+BaseException          ← rarísimo usarlo directamente
+    └── Exception      ← la base de casi todo
+            ├── TypeError
+            ├── ValueError
+            ├── KeyError
+            ├── IndexError
+            ├── ZeroDivisionError
+            ├── AttributeError
+            ├── NameError
+            ├── FileNotFoundError
+            └── ... (cientos más)
+
+try:
+    ...
+except TypeError:          # 1. las más específicas primero
+    ...
+except ValueError:         # 2. otras específicas
+    ...
+except Exception as e:     # 3. la general al final (atrapa todo lo demás)
+    ...
