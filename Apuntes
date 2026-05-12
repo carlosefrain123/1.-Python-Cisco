@@ -1,80 +1,179 @@
+""" Notas Python — Cisco 2
 1. Listas
-1.1. delete:
-Ejemplo:
-del valor[1]
+1.1 del — Eliminar un elemento
+Elimina un elemento de la lista usando su posición (índice).
+frutas = ['manzana', 'pera', 'uva']
+del frutas[1]          # elimina 'pera'
+print(frutas)          # → ['manzana', 'uva']
 
-1.2. append:
-Ejemplo:
-valor.append(1)
+1.2 append — Agregar al final
+Agrega un nuevo elemento al final de la lista.
+frutas = ['manzana', 'pera']
+frutas.append('uva')   # agrega 'uva' al final
+print(frutas)          # → ['manzana', 'pera', 'uva']
 
-1.3. insert:
-Ejemplo:
-valor.insert(1,0)
+1.3 insert — Insertar en posición específica
+Inserta un elemento en la posición que tú elijas.
+frutas = ['manzana', 'uva']
+frutas.insert(1, 'pera')   # inserta 'pera' en posición 1
+print(frutas)              # → ['manzana', 'pera', 'uva']
 
-2. Burbuja
-2.1. sort: Ordenar la lista oarrays
-valor.sort()
-Ejemplo:
-lista=[5,2,1]
-lista.sort()
+2. Ordenamiento
+2.1 sort — Ordenar de menor a mayor
+Ordena la lista de menor a mayor (modifica la lista original).
+numeros = [5, 2, 8, 1, 4]
+numeros.sort()
+print(numeros)   # → [1, 2, 4, 5, 8]
 
-    ->1,2,5
-2.2. reverse
-valor.reverse()
-Ejemplo:
-lista=[5,2,1]
-lista.reverse()
+2.2 reverse — Invertir el orden
+Invierte el orden de los elementos (no ordena, solo voltea).
+numeros = [1, 2, 3, 4, 5]
+numeros.reverse()
+print(numeros)   # → [5, 4, 3, 2, 1]
 
-    ->1,2,5
+3. Tuplas y Diccionarios
+3.1 Tuplas
+Como una lista pero NO se puede modificar. Se usa para datos fijos.
+colores = ('rojo', 'verde', 'azul')
+print(colores[0])   # → 'rojo'
+# colores[0] = 'negro'  → ERROR, no se puede cambiar
 
-3.Tuplas y Diccionarios:
-3.1. Tuplas:
-Ejemplo:
-Tupla=(1,2,3,4)
+3.2 Diccionarios
+Guarda datos en pares clave:valor (como un contacto con nombre y teléfono).
+precios = {'manzana': 10, 'pera': 20, 'uva': 30}
+print(precios['pera'])   # → 20
 
-3.2. Diccionarios:
-Ejemplo:
-diccionario={"gato":10,"perro":20,"cuy":30}
+3.2.1 keys() — Recorrer solo las claves
+precios = {'manzana': 10, 'pera': 20, 'uva': 30}
+for fruta in precios.keys():
+    print(fruta, '->', precios[fruta])
+# → manzana -> 10
+# → pera -> 20
+# → uva -> 30
 
-3.2.1. Diccionarios - Key:
-diccionario_Key={"gato":10,"perro":20,"cuy":30}
-for i in dictionary_Key.keys():
-    print(i,"->",dictionary_Key[i])
+3.2.2 items() — Recorrer clave y valor juntos
+Más limpio que keys() cuando necesitas ambos.
+precios = {'manzana': 10, 'pera': 20, 'uva': 30}
+for fruta, precio in precios.items():
+    print(fruta, '->', precio)
+# → manzana -> 10
+# → pera -> 20
+# → uva -> 30
 
-    ->gato:10
-    ->perro->20
-    ->cuy->30
+3.2.3 sorted() — Recorrer ordenado alfabéticamente
+Muestra las claves en orden alfabético.
+precios = {'manzana': 10, 'pera': 20, 'uva': 30}
+for fruta in sorted(precios.keys()):
+    print(fruta, '->', precios[fruta])
+# → manzana -> 10
+# → pera -> 20
+# → uva -> 30
 
-3.2.2. Diccionarios - items:
-diccionario_items={"gato":10,"perro":20,"cuy":30}
-for a,b in dictionary_items.items():
-    print(a,"->",b)
+3.2.4 update() — Agregar o actualizar
+Agrega un nuevo par o actualiza uno existente.
+precios = {'manzana': 10, 'pera': 20}
+precios.update({'uva': 30})     # agrega 'uva'
+precios.update({'pera': 99})    # actualiza 'pera'
+print(precios)
+# → {'manzana': 10, 'pera': 99, 'uva': 30}
 
-    ->gato->10
-    ->perro->20
-    ->cuy->30
+4. Excepciones
+Los errores más comunes que Python lanza cuando algo sale mal.
 
-3.2.3. Diccionario - sorted
-diccionario_sorted={"gato":10,"perro":20,"cuy":30}
-for i in sorted(dictionary_Key.keys()):
-    print(i,"->",dictionary_Key[i])
+4.1 ZeroDivisionError — División entre cero
+resultado = 10 / 0
+# → ZeroDivisionError: division by zero
 
-    ->cuy->30
-    ->gato->10
-    ->perro->20
+4.2 ValueError — Valor incorrecto
+numero = int('Hola')   # 'Hola' no es un número
+# → ValueError: invalid literal for int()
 
-3.2.4. Diccionario - update
-diccionario={"gato":10,"perro":20,"cuy":30}
-diccionario.update("caballo":20)
+4.3 TypeError — Tipos incompatibles
+resultado = 10 + "5"   # no puedes sumar int con string
+# → TypeError: unsupported operand type(s)
 
-    ->{"gato":10,"perro":20,"cuy":30,"caballo":20}
+4.4 AttributeError — Método que no existe
+numero = "10"
+numero.append(5)   # los strings no tienen append
+# → AttributeError: 'str' object has no attribute 'append'
 
-4. Excepciones:
-4.1. ZeroDivisionError:
-    10/0
-4.2. ValuesError:
-    int("Hola")
-4.3. TypeError:
-    10+"5"
-4.4. AtributeError:
-    "10".append
+5. Módulos y Paquetes
+5.1 random — La más útil en proyectos
+import random
+
+# Número entero entre 1 y 10 (ambos incluidos)
+random.randint(1, 10)          # → ej: 7
+
+# Elegir un elemento de una lista
+frutas = ['manzana', 'pera', 'uva']
+random.choice(frutas)          # → ej: 'pera'
+
+# Elegir varios sin repetir
+random.sample(frutas, 2)       # → ej: ['uva', 'manzana']
+
+# Mezclar lista
+random.shuffle(frutas)
+print(frutas)                  # → orden aleatorio
+
+5.2 math — Para cálculos matemáticos
+import math
+
+math.sqrt(25)       # → 5.0   raíz cuadrada
+math.floor(4.9)     # → 4     redondeo hacia abajo
+math.ceil(4.1)      # → 5     redondeo hacia arriba
+math.pi             # → 3.141592...  constante pi
+math.pow(2, 3)      # → 8.0   potencia (2³)
+
+6. Métodos en Cadenas (Strings)
+6.1 Usarás SIEMPRE 🔥
+upper() y lower() — Cambiar mayúsculas/minúsculas
+"hola MUNDO".lower()   # → "hola mundo"
+"hola MUNDO".upper()   # → "HOLA MUNDO"
+
+strip() — Limpiar espacios
+"  hola  ".strip()    # → "hola"
+"  hola  ".lstrip()   # → "hola  "  (solo izquierda)
+"  hola  ".rstrip()   # → "  hola"  (solo derecha)
+
+replace() — Reemplazar texto
+"hola mundo".replace("mundo", "Python")
+# → "hola Python"
+
+split() — Separar string en lista
+"manzana,pera,uva".split(",")
+# → ["manzana", "pera", "uva"]
+
+join() — Unir lista en string
+",".join(["manzana", "pera", "uva"])
+# → "manzana,pera,uva"
+
+find() — Buscar texto (devuelve posición)
+"hola mundo".find("mundo")   # → 5
+"hola mundo".find("xyz")     # → -1  (no encontrado)
+
+startswith() y endswith() — Verificar inicio/fin
+"hola mundo".startswith("hola")    # → True
+"hola mundo".endswith("mundo")     # → True
+"hola mundo".startswith("mundo")   # → False
+
+6.2 Usarás FRECUENTEMENTE ✅
+isdigit() — ¿Es solo números?
+"123".isdigit()    # → True
+"12a".isdigit()    # → False
+
+isalpha() — ¿Es solo letras?
+"hola".isalpha()    # → True
+"hola1".isalpha()   # → False
+
+isupper() e islower() — ¿Todo mayúsculas o minúsculas?
+"HOLA".isupper()   # → True
+"hola".islower()   # → True
+"Hola".isupper()   # → False
+
+capitalize() — Primera letra mayúscula
+"hola mundo".capitalize()   # → "Hola mundo"
+
+title() — Cada palabra con mayúscula
+"hola mundo".title()   # → "Hola Mundo"
+
+ """
