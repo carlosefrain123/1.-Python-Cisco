@@ -97,6 +97,53 @@ numero = "10"
 numero.append(5)   # los strings no tienen append
 # → AttributeError: 'str' object has no attribute 'append'
 
+4.5 IndexError
+try:
+    lista = [1, 2, 3]
+    print(lista[10])
+except IndexError:
+    print("Esa posición no existe")
+
+4.6 KeyError
+try:
+    precios = {"manzana": 10}
+    print(precios["pera"])
+except KeyError:
+    print("Esa clave no existe en el diccionario")
+
+4.7 ImportError
+try:
+    import mathhh
+except ImportError:
+    print("Ese módulo no existe")
+
+4.8 KeyboardInterrupt
+try:
+    while True:
+        pass          # loop infinito
+except KeyboardInterrupt:
+    print("El usuario presionó Ctrl+C")
+
+4.8 OverflowError
+try:
+    import math
+    math.exp(1000)
+except OverflowError:
+    print("Número demasiado grande")
+
+4.9 AssertionError
+try:
+    assert 2 + 2 == 5
+except AssertionError:
+    print("La condición no se cumplió")
+
+4.10 También puedes atrapar varias a la vez
+try:
+    lista = [1, 2, 3]
+    print(lista[10])
+except (IndexError, KeyError):
+    print("Error de búsqueda")
+    
 5. Módulos y Paquetes
 5.1 random — La más útil en proyectos
 import random
